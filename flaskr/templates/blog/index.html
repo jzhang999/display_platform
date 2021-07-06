@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>Products</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('blog.product_create') }}">New</a>
+    <a class="action" href="{{ url_for('products.index') }}">Show</a>
+  {% endif %}
+
+  <h1>Categories</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('blog.cat_create') }}">New</a>
+    <a class="action" href="{{ url_for('categories.index') }}">Show</a>
+  {% endif %}
+{% endblock %}
